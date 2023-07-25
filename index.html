@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let ua = navigator.userAgent.toLocaleLowerCase();
+        let pf = navigator.platform.toLocaleLowerCase();
+        let isAndroid = (/android/i).test(ua)||((/iPhone|iPod|iPad/i).test(ua) && (/linux/i).test(pf))
+             || (/ucweb.*linux/i.test(ua));
+    let isIOS =(/iPhone|iPod|iPad/i).test(ua) && !isAndroid;
+        let isWinPhone = (/Windows Phone|ZuneWP7/i).test(ua);
+
+        let mobileType = {
+                 pc:!isAndroid && !isIOS && !isWinPhone,
+                     ios:isIOS,
+                     android:isAndroid,
+                     winPhone:isWinPhone
+        };
+    if(mobileType.pc)
+        window.location.href="index_pc.html";
+    else  window.location.href="index_mo.html";
+
+        console.log(mobileType.pc);
+</script>
+</body>
+</html>
