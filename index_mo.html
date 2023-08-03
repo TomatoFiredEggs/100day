@@ -234,7 +234,6 @@
         <h2 class="col-xs-12" style="font-family: 'Great Vibes',cursive;
     color: #283a44; padding-bottom: 0px;font-size: 18px">*********</h2>
     </div>
-    <audio id="bgm" autoplay="autoplay" controls="controls" loop="loop" preload="auto" src="StayWithMe.mp3"></audio>
     <span class="wow fadeInUp animated col-xs-12 text-center" data-wow-delay="0.7s" style="color: rgb(239, 106, 138);
          visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;margin: 15px auto;font-size: 16px">
         ********* ♥</span>
@@ -585,19 +584,13 @@
 <script src="js/anijs-min.js"></script>
 <script src="js/anijs-helper-scrollreveal-min.js"></script>
 <script src="js/flu.js" type="text/javascript"></script>
-<script type="text/javascript">
-    var audio = document.getElementById("bgm"); // 获取音乐元素
-
-    // 判断是否在微信中打开
-    var ua = navigator.userAgent.toLowerCase();
-    var isWeixin = ua.indexOf('micromessenger') != -1;
-    if (isWeixin) {
-        document.addEventListener("WeixinJSBridgeReady", function () {
-        audio.play(); // 微信中需要添加触屏动作才能播放音乐
+<div>
+    <audio id="bgm" autoplay="autoplay" controls="controls" loop="loop" preload="auto" src="StayWithMe.mp3"></audio>
+    <script type="text/javascript">
+        document.addEventListener("touchstart", function () {
+            var audio=document.getElementById("bgm");
+            audio.play(); // 微信中需要添加触屏动作才能播放音乐
         }, false);
-    } else {
-    audio.play(); // 非微信中直接播放音乐
-    }
-</script>
+    </script>
 </body>
 </html>
