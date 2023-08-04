@@ -590,6 +590,11 @@
 <div>
     <audio id="bgm" autoplay="autoplay" controls="controls" loop="loop" preload="auto" src="Stay_With_Me.mp3"></audio>
     <script type="text/javascript">
+        document.addEventListener("scroll", function () {
+            var audio=document.getElementById("bgm");
+            audio.play(); // 微信中需要添加触屏动作才能播放音乐
+        }, false);
+
         document.addEventListener("touchstart", function () {
             var audio=document.getElementById("bgm");
             audio.play(); // 微信中需要添加触屏动作才能播放音乐
