@@ -598,10 +598,10 @@
             audio.play(); // 微信中需要添加滚动动作才能播放音乐
         }, false);
 
-        // document.addEventListener("touchstart", function () {
-        //     var audio=document.getElementById("bgm");
-        //     audio.play(); // 微信中需要添加触屏动作才能播放音乐
-        // }, false);
+        document.addEventListener("touchstart", function () {
+            var audio=document.getElementById("bgm");
+            audio.play(); // 微信中需要添加触屏动作才能播放音乐
+        }, false);
     </script>
 </body>
 </html>
